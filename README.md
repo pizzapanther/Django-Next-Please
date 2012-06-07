@@ -47,7 +47,7 @@ def topic_front (request, slug):
 Options
 -------
 ```
-pagination(object\_list\_var, per\_page=PER\_PAGE, page\_param='page', output\_var='paginator', orphans=0, allow\_empty\_first\_page=True)
+pagination(object_list_var, per_page=PER_PAGE, page_param='page', output_var='paginator', orphans=0, allow_empty_first_page=True)
 ```
 
 **Required:**
