@@ -3,7 +3,7 @@ Django-Next-Please
 
 Provides a simple decorator to add to **TemplateRepsonse** views to provide pagination.
 
-Django-Next-Please is easier to setup than (Django-Paginagtion)[https://github.com/ericflo/django-pagination] and helps you to avoid those [ugly class based views](http://lukeplant.me.uk/blog/posts/djangos-cbvs-were-a-mistake/).
+Django-Next-Please is easier to setup than [Django-Paginagtion](https://github.com/ericflo/django-pagination) and helps you to avoid those [ugly class based views](http://lukeplant.me.uk/blog/posts/djangos-cbvs-were-a-mistake/).
 
 Installation
 ------------
