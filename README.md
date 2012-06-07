@@ -53,12 +53,17 @@ pagination(object\_list\_var, per\_page=PER\_PAGE, page\_param='page', output\_v
 
 object\_list\_var: Context variable name that contains the data to be paginated.
 
+
 **Optional:**
 
 per\_page: Defaults to 10, override globally with settings.PER\_PAGE
+
 page\_param: Defaults to _page_, the request query string parameter used to determine the current page.
+
 output\_var: Defaults to _paginator_, context variable the pagination will be in.
+
 orphans: See https://docs.djangoproject.com/en/1.4/topics/pagination/#s-optional-arguments
+
 allow\_empty\_first\_page: See https://docs.djangoproject.com/en/1.4/topics/pagination/#s-optional-arguments
 
 More Info
