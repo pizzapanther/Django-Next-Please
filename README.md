@@ -75,26 +75,33 @@ Django Next Please is based off the [Django Paginator Class](https://docs.django
 
 Returns the current page object.
 
+
 **def current_list (self)**
 
 Returns an object list for the current page.
+
 
 **def number (self):**
 
 Returns the current page number.
 
+
 **def has_previous (self)**
 
 Returns True if the current page has a page before it.
 
+
 **def has_next (self)**
 
 Returns True if the current page has a page after it.
-    
+
+
 **def previous_qs (self)**
 
 Returns a query string for the previous page.
 
+
 **def next_qs (self)**
 
 Returns a query string for the next page.
+
