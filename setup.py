@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name = "Django-Next-Please",
-    version = '12.06.1',
+    version = '12.11.1',
     description = "Simple Pagination Decorator for Django.",
     url = "https://github.com/pizzapanther/Django-Next-Please",
     author = "Paul Bailey",
