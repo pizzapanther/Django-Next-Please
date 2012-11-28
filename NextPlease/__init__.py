@@ -21,7 +21,7 @@ class NextPleasePaginator (Paginator):
         self._current = self.page(1)
         
       except EmptyPage:
-        self._current = self.page(paginator.num_pages)
+        self._current = self.page(self.num_pages)
         
     return self._current
     
