@@ -1,5 +1,6 @@
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.conf import settings
+from django import http
 
 PER_PAGE = getattr(settings, 'PER_PAGE', 10)
 
@@ -18,10 +19,10 @@ class NextPleasePaginator (Paginator):
         self._current = self.page(page)
         
       except PageNotAnInteger:
-        self._current = self.page(1)
+        raise http.Http404
         
       except EmptyPage:
-        self._current = self.page(self.num_pages)
+        raise http.Http404
         
     return self._current
     
