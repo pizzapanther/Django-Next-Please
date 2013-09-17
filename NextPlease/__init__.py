@@ -1,6 +1,7 @@
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.conf import settings
 from django import http
+from django.template.response import TemplateResponse
 
 PER_PAGE = getattr(settings, 'PER_PAGE', 10)
 
@@ -77,15 +78,16 @@ def pagination (object_list_var, per_page=PER_PAGE, page_param='page', output_va
   def decorator(target):
     def wrapper(*args, **kwargs):
       tpl_response = target(*args, **kwargs)
-      tpl_response.context_data[output_var] = NextPleasePaginator(
-                                                                  args[0],
-                                                                  tpl_response.context_data[object_list_var],
-                                                                  per_page,
-                                                                  page_param,
-                                                                  orphans,
-                                                                  allow_empty_first_page
-                                                                 )
-      
+      if isinstance(tpl_response,TemplateResponse):
+        tpl_response.context_data[output_var] = NextPleasePaginator(
+          args[0],
+          tpl_response.context_data[object_list_var],
+          per_page,
+          page_param,
+          orphans,
+          allow_empty_first_page
+          )
+
       return tpl_response
       
     return wrapper
