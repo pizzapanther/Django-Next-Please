@@ -74,13 +74,13 @@ class NextPleasePaginator (Paginator):
         
     return qs
     
-def pagination (object_list_var, per_page=PER_PAGE, page_param='page', output_var='paginator', orphans=0, allow_empty_first_page=True):
+def pagination (object_list_var, per_page=PER_PAGE, page_param='page', output_var='paginator', orphans=0, allow_empty_first_page=True, request_arg=0):
   def decorator(target):
     def wrapper(*args, **kwargs):
       tpl_response = target(*args, **kwargs)
       if isinstance(tpl_response,TemplateResponse):
         tpl_response.context_data[output_var] = NextPleasePaginator(
-          args[0],
+          args[request_arg],
           tpl_response.context_data[object_list_var],
           per_page,
           page_param,
