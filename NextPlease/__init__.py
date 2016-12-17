@@ -14,7 +14,8 @@ class NextPleasePaginator (Paginator):
     
   def current (self):
     if not hasattr(self, '_current'):
-      page = self.request.REQUEST.get(self.page_param, '1')
+      data = self.request.POST or self.request.GET
+      page = data.get(self.page_param, '1')
       
       try:
         self._current = self.page(page)
